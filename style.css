@@ -1,0 +1,44 @@
+ /* Custom styles to complement Tailwind */
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow: hidden; 
+        }
+        #map {
+            height: 100vh;
+            width: 100vw;
+            z-index: 10;
+        }
+        /* Hide default routing machine itinerary */
+        .leaflet-routing-container {
+            display: none;
+        }
+        /* Custom glowing effect for traffic lines */
+        .leaflet-heavy-traffic {
+            stroke: #EF4444; /* red-500 */
+            filter: drop-shadow(0 0 4px #EF4444);
+        }
+        .leaflet-moderate-traffic {
+            stroke: #F59E0B; /* amber-500 */
+            filter: drop-shadow(0 0 3px #F59E0B);
+        }
+        .leaflet-free-traffic {
+            stroke: #22C55E; /* green-500 */
+        }
+        /* Loading spinner */
+        .loader {
+            border: 5px solid #f3f3f3; /* Light grey */
+            border-top: 5px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 1000;
+            transform: translate(-50%, -50%);
+        }
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
